@@ -1,24 +1,36 @@
-<h1>Weather forecast</h1>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div>
+            <h3>Weather forecast</h3>
+        </div>
+        <div>
+            <p>This component demonstrates fetching data from the server.</p>
+        </div>
+    </div>
+    <div class="panel-content">
+        <div class="panel-body">
+            <table border="1">
+                <tr>
+                    <th>Date Format</th>
+                    <th>Temperature in C</th>
+                    <th>Temperature in F</th>
+                    <th>Summary</th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr *ngFor="let wc of weatherList" style="height: 35px;">
+                    <td> {{wc.dateFormatted}} </td>
+                    <td> {{wc.temperatureC}} </td>
+                    <td> {{wc.temperatureF}} </td>
+                    <td> {{wc.summary}} </td>
+                    <td style="width:80px;text-align: center;">
+                        <button class="btn btn-info" style="width:60px; height: 25px;" (click)="openModal(wc.type, wc.temperatureC, wc.temperatureF, wc.summary)">View</button> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    <div class="panel-footer">
 
-<p>This component demonstrates fetching data from the server.</p>
-
-<p *ngIf="!forecasts"><em>Loading...</em></p>
-
-<table class='table' *ngIf="forecasts">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Temp. (C)</th>
-      <th>Temp. (F)</th>
-      <th>Summary</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let forecast of forecasts">
-      <td>{{ forecast.dateFormatted }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
-    </tr>
-  </tbody>
-</table>
+    </div>
+</div>
