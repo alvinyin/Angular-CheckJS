@@ -12,7 +12,6 @@ import { BsModalRef } from "ngx-bootstrap";
         </div>
         <div class="modal-body">
             <div> {{title}} </div>
-
             <div> {{temperatureC}} </div>
             <div> {{temperatureF}} </div>
             <div> {{description}} </div>

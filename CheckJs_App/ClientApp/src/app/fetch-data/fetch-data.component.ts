@@ -17,8 +17,6 @@ export class FetchDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.weatherList = weatherStorage;
-
-    console.log(`the length is ${this.weatherList.length}`);
   }
 
   openModal(type: string, tempC: number, tempF: number, summary: string){
@@ -42,5 +40,3 @@ export interface WeatherForecast {
   temperatureF: number;
   summary: string;
 }
-
-
